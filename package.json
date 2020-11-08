@@ -1,0 +1,25 @@
+{
+  "name": "news-explorer-api",
+  "version": "0.1.0",
+  "description": "diplom-yandex",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TolkachevPeter/news-explorer-api.git"
+  },
+  "author": "Tolkachev Peter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TolkachevPeter/news-explorer-api/issues"
+  },
+  "homepage": "https://github.com/TolkachevPeter/news-explorer-api#readme",
+  "dependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
