@@ -1,4 +1,4 @@
-const cardsRouter = require('express').Router();
+const articlesRouter = require('express').Router();
 const {
   getAllArticles,
   createArticle,
@@ -20,12 +20,12 @@ const auth = require('../middlewares/auth');
 // # удаляет сохранённую статью  по _id
 // DELETE /articles/articleId
 
-cardsRouter.get('/articles', getAllArticles);
-cardsRouter.post('/articles', cardJoiModel, createArticle);
-cardsRouter.delete('/cards/:id', objectIdModel, auth, deleteArticleById);
+articlesRouter.get('/articles', getAllArticles);
+articlesRouter.post('/articles', cardJoiModel, createArticle);
+articlesRouter.delete('/articles/:id', objectIdModel, auth, deleteArticleById);
 
-cardsRouter.all('*', () => {
+articlesRouter.all('*', () => {
   throw new NotFoundError('Запрашиваемый ресурс не найден');
 });
 
-module.exports = cardsRouter;
+module.exports = articlesRouter;
