@@ -20,7 +20,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb://localhost:27017/mestodb', {
+mongoose.connect('mongodb://localhost:27017/news-api', {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
