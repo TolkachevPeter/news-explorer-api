@@ -12,6 +12,7 @@ const {
 } = require('../joi-models/index.js');
 const auth = require('../middlewares/auth');
 
+// что-то не очень вышло
 usersRouter.get('/users/me', getUser);
 
 module.exports = usersRouter;
