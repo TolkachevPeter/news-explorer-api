@@ -13,8 +13,5 @@ const {
 const auth = require('../middlewares/auth');
 
 usersRouter.get('/users/me', # возвращает информацию о пользователе (email и имя));
-usersRouter.get('/users/articles', objectIdModel, getUser);
-usersRouter.patch('/users/me', infoJoiModel, auth, patchUser);
-usersRouter.patch('/users/me/avatar', avatarJoiModel, auth, patchUserAvatar);
 
 module.exports = usersRouter;

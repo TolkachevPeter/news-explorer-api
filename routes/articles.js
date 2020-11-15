@@ -22,11 +22,9 @@ const auth = require('../middlewares/auth');
 // # удаляет сохранённую статью  по _id
 // DELETE /articles/articleId
 
-cardsRouter.get('/cards', getAllCards);
-cardsRouter.post('/cards', cardJoiModel, createCard);
+cardsRouter.get('/articles', getAllCards);
+cardsRouter.post('/articles', cardJoiModel, createCard);
 cardsRouter.delete('/cards/:id', objectIdModel, auth, deleteCardById);
-cardsRouter.put('/cards/:id/likes', objectIdModel, likeCard);
-cardsRouter.delete('/cards/:id/likes', objectIdModel, dislikeCard);
 
 cardsRouter.all('*', () => {
   throw new NotFoundError('Запрашиваемый ресурс не найден');
