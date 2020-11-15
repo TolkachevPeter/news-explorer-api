@@ -9,7 +9,6 @@ const usersRouter = require('./routes/users.js');
 const articlesRouter = require('./routes/articles');
 const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
-const { requestLogger, errorLogger } = require('./middlewares/logger');
 const {
   createUserJoiModel,
   loginJoiModel,
@@ -26,8 +25,6 @@ mongoose.connect('mongodb://localhost:27017/news-api', {
   useFindAndModify: false,
 });
 
-app.use(requestLogger);
-
 app.post('/signin', loginJoiModel, login);
 app.post('/signup', createUserJoiModel, createUser);
 
@@ -35,8 +32,6 @@ app.use(auth);
 
 app.use('/', usersRouter);
 app.use('/', articlesRouter);
-
-app.use(errorLogger);
 
 app.use(errors());
 
