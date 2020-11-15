@@ -12,6 +12,6 @@ const {
 } = require('../joi-models/index.js');
 const auth = require('../middlewares/auth');
 
-usersRouter.get('/users/me', # возвращает информацию о пользователе (email и имя));
+usersRouter.get('/users/me', getUser);
 
 module.exports = usersRouter;

@@ -3,14 +3,13 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const {
   BadRequestError,
-  NotFoundError,
   UnauthorizedError,
   ConflictError,
 } = require('../errors');
 
 const { passwordModel } = require('../joi-models/index');
 
-module.exports.getAllUsers = (req, res, next) => {
+module.exports.getUser = (req, res, next) => {
   User.find({})
     .then((users) => {
       res.status(200).send({ data: users });

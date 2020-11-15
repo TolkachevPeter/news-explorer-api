@@ -1,11 +1,9 @@
 const cardsRouter = require('express').Router();
 const {
-  getAllCards,
-  createCard,
-  deleteCardById,
-  likeCard,
-  dislikeCard,
-} = require('../controllers/cards');
+  getAllArticles,
+  createArticle,
+  deleteArticleById,
+} = require('../controllers/articles');
 const {
   NotFoundError,
 } = require('../errors');
@@ -22,9 +20,9 @@ const auth = require('../middlewares/auth');
 // # удаляет сохранённую статью  по _id
 // DELETE /articles/articleId
 
-cardsRouter.get('/articles', getAllCards);
-cardsRouter.post('/articles', cardJoiModel, createCard);
-cardsRouter.delete('/cards/:id', objectIdModel, auth, deleteCardById);
+cardsRouter.get('/articles', getAllArticles);
+cardsRouter.post('/articles', cardJoiModel, createArticle);
+cardsRouter.delete('/cards/:id', objectIdModel, auth, deleteArticleById);
 
 cardsRouter.all('*', () => {
   throw new NotFoundError('Запрашиваемый ресурс не найден');
