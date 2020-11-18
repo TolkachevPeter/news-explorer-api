@@ -14,9 +14,26 @@ module.exports.getAllArticles = (req, res, next) => {
 };
 
 module.exports.createArticle = (req, res, next) => {
-  const { name, link } = req.body;
+  const {
+    keyword,
+    title,
+    text,
+    date,
+    source,
+    link,
+    image,
+  } = req.body;
 
-  Article.create({ name, link, owner: req.user._id })
+  Article.create({
+    keyword,
+    title,
+    text,
+    date,
+    source,
+    link,
+    image,
+    owner: req.user._id,
+  })
     .then((article) => res.status(201).send({ data: article }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
