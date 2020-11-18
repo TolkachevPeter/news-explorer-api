@@ -10,7 +10,7 @@ const {
 const { passwordModel } = require('../joi-models/index');
 
 module.exports.getUser = (req, res, next) => {
-  User.find({})
+  User.findById(req.user._id)
     .then((users) => {
       res.status(200).send({ data: users });
     })

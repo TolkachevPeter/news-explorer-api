@@ -35,6 +35,7 @@ app.use('/', articlesRouter);
 
 app.use(errors());
 
+// я уже исправлял все как того требует eslint, но тогда обработчик ошибок перестает работать
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   // если у ошибки нет статуса, выставляем 500
