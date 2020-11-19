@@ -4,6 +4,7 @@ const { linkJoi } = require('./link-model');
 const { nameJoi } = require('./name-model');
 const { passwordJoi } = require('./password-model');
 const { objectJoi } = require('./object-id-model');
+const { textJoi } = require('./text-model');
 
 const createUserJoiModel = celebrate({
   body: Joi.object().keys({
@@ -30,8 +31,14 @@ const avatarJoiModel = celebrate({
 
 const articleJoiModel = celebrate({
   body: Joi.object().keys({
-    name: nameJoi,
+    keyword: textJoi,
+    title: textJoi,
+    text: textJoi,
+    date: textJoi,
+    source: textJoi,
     link: linkJoi,
+    image: linkJoi,
+    owner: objectJoi,
   }),
 });
 
