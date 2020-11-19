@@ -28,7 +28,7 @@ const avatarJoiModel = celebrate({
   }),
 });
 
-const cardJoiModel = celebrate({
+const articleJoiModel = celebrate({
   body: Joi.object().keys({
     name: nameJoi,
     link: linkJoi,
@@ -55,7 +55,7 @@ const objectIdModel = celebrate({
 });
 
 module.exports = {
-  cardJoiModel,
+  articleJoiModel,
   infoJoiModel,
   avatarJoiModel,
   loginJoiModel,

@@ -7,7 +7,7 @@ const {
 const {
   NotFoundError,
 } = require('../errors');
-const { cardJoiModel, objectIdModel } = require('../joi-models/index');
+const { articleJoiModel, objectIdModel } = require('../joi-models/index');
 const auth = require('../middlewares/auth');
 
 // # возвращает все сохранённые пользователем статьи
@@ -21,7 +21,7 @@ const auth = require('../middlewares/auth');
 // DELETE /articles/articleId
 
 articlesRouter.get('/articles', getAllArticles);
-articlesRouter.post('/articles', cardJoiModel, createArticle);
+articlesRouter.post('/articles', articleJoiModel, createArticle);
 articlesRouter.delete('/articles/:id', objectIdModel, auth, deleteArticleById);
 
 articlesRouter.all('*', () => {
