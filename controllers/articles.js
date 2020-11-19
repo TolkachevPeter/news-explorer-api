@@ -50,7 +50,7 @@ module.exports.deleteArticleById = (req, res, next) => {
       } else if (article.owner._id.toString() !== req.user._id) {
         throw new UnauthorizedError('Нет доступа к карточке');
       }
-      return article.findOneAndRemove({ _id: req.params.id, owner: req.user._id })
+      return Article.findOneAndRemove({ _id: req.params.id, owner: req.user._id })
         .then((found) => res.status(200).send(found));
     })
     .catch((err) => {
